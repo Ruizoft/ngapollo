@@ -5,7 +5,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import 'bootstrap/scss/bootstrap.scss';
-import { DocumentModule } from '../Document/document.module';
 import { environment } from '../environments/environment';
 import { ServiceWorkerModule } from '../ServiceWorker/serviceWorker.module';
 import { AppComponent } from './app.component';
@@ -17,7 +16,6 @@ import './app.scss';
     imports: [
       BrowserModule,
       HttpClientModule,
-      DocumentModule,
       StoreModule.forRoot({}),
       StoreDevtoolsModule.instrument({
         name: 'SIIFWEB',
