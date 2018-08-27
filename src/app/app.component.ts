@@ -4,7 +4,7 @@ import '@fortawesome/fontawesome-free/js/all.js';
 
 @Component({
  selector: 'my-app',
- template: '<h1>Majoris!</h1>',
+ template: '<h1>Bienvenidos!!</h1>',
 })
 export class AppComponent {
 

@@ -1,9 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreModule } from '@ngrx/store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 import 'bootstrap/scss/bootstrap.scss';
 import { environment } from '../environments/environment';
 import { ServiceWorkerModule } from '../ServiceWorker/serviceWorker.module';
@@ -16,15 +14,7 @@ import './app.scss';
     imports: [
       BrowserModule,
       HttpClientModule,
-      StoreModule.forRoot({}),
-      StoreDevtoolsModule.instrument({
-        name: 'SIIFWEB',
-        maxAge: 25,
-        logOnly: environment.production,
-      }),
-      EffectsModule.forRoot([]),
       ServiceWorkerModule.register('/sw.js', { enabled: environment.production }),
  ],
 })
-export class AppModule {
-}
+export class AppModule {}

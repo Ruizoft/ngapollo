@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { AngularCompilerPlugin } = require('@ngtools/webpack');
-const helpers = require('./helpers');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 
 module.exports = {
@@ -21,7 +20,11 @@ module.exports = {
     },  
     module: {
       rules: [
-        { test: /\.js$/, exclude: /node_modules/, use: 'babel-loader' },
+        { 
+          test: /\.js$/, 
+          exclude: /node_modules/, 
+          use: 'babel-loader' 
+        },
         {
           test: /\.ts$/,
           exclude: /node_modules/,
@@ -32,6 +35,11 @@ module.exports = {
           test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
           exclude: /node_modules/,
           loader: 'babel-loader!ts-loader'
+        },
+        {
+          test: /\.(graphql|gql)$/,
+          exclude: /node_modules/,
+          loader: 'graphql-tag/loader'
         },
         {
           test: /\.html$/, 
